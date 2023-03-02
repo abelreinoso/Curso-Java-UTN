@@ -1,0 +1,38 @@
+3. Para agregar un archivo txt y hacer el primer commit localmente, se deben seguir los siguientes pasos:
+	>> Abrir la terminal y navegar hasta el directorio donde se desea crear el repositorio.
+	>> Ejecutar el comando git init para inicializar el repositorio local.
+	>> Crear un archivo txt en el directorio y agregarle algún texto.
+	>> Ejecutar el comando git add <archivo> para agregar el archivo al área de staging.
+	>> Ejecutar el comando git commit -m "Primer commit" para hacer el primer commit.
+Después de hacer el commit, el archivo no estará en el repositorio remoto porque aún no se ha hecho el push correspondiente.
+
+4. Para hacer el push correspondiente y enviar los cambios al repositorio remoto, se deben seguir los siguientes pasos:
+	>> Crear un repositorio remoto en Github (o en otra plataforma de hosting de repositorios).
+	>> Obtener la URL del repositorio remoto.
+	>> Ejecutar el comando git remote add origin <URL del repositorio> para conectar el repositorio local con el 	remoto.
+	>> Ejecutar el comando git push -u origin main para hacer el push correspondiente.
+Después de hacer el push, el archivo estará en el repositorio remoto.
+
+5. Cuando se modifica el archivo desde la interfaz web de Github, los cambios no se aplican automáticamente en la copia local. Esto se debe a que la copia local no está sincronizada con el repositorio remoto.
+
+6. Para traer los cambios desde el repositorio remoto y aplicarlos en la copia local, se debe ejecutar el siguiente comando:
+	>> Ejecutar el comando git pull origin main para traer los cambios del repositorio remoto.
+
+Después de ejecutar el pull, los cambios se aplicarán en la copia local.
+
+7. Cuando se modifica el archivo desde la interfaz web de Github y se modifica algo distinto en la copia local antes de hacer el pull, se creará un conflicto al intentar hacer el pull. Esto se debe a que los cambios en la interfaz web y los cambios en la copia local son distintos y no se pueden fusionar automáticamente.
+
+8. Para hacer un push de los cambios en la copia local, se deben seguir los siguientes pasos:
+
+	>> Ejecutar el comando git add <archivo> para agregar el archivo modificado al área de staging.
+	>> Ejecutar el comando git commit -m "Cambios locales" para hacer el commit con los cambios locales.
+	>> Ejecutar el comando git push para hacer el push correspondiente.
+Al intentar hacer el push, se producirá un error indicando que hay conflictos con el repositorio remoto y que es necesario hacer un pull primero.
+
+9. Para arreglar el problema de conflicto, se deben seguir los siguientes pasos:
+	>> Ejecutar el comando git pull origin main para traer los cambios del repositorio remoto y fusionarlos con los cambios locales.
+	>> Resolver los conflictos manualmente, editando el archivo con un editor de texto y eligiendo qué cambios se deben conservar.
+	>> Ejecutar el comando git add <archivo> para agregar el archivo modificado al área de staging.
+	>> Ejecutar el comando git commit -m "Conflicto resuelto" para hacer el commit con los cambios fusionados.
+	>> Ejecutar el comando git push para hacer el push correspondiente.
+Después de hacer el push, los cambios estarán sincronizados en el repositorio remoto y en el local.
